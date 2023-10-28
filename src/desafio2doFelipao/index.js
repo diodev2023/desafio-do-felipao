@@ -26,3 +26,29 @@ Se vitórias for maior ou igual a 101 = Imortal
 Ao final deve se exibir uma mensagem:
 "O Herói tem de saldo de **{saldoVitorias}** está no nível de **{nivel}**"
 */
+function calcularXP(vitorias, derrotas) {
+    const saldoVitorias = vitorias - derrotas;
+    let XP = "";
+
+    if (vitorias < 10) {
+        XP  = "Ferro";
+    } else if (vitorias >= 11 && vitorias <= 20) {
+        XP  = "Bronze";
+    } else if (vitorias >= 21 && vitorias <= 50) {
+        XP  = "Prata";
+    } else if (vitorias >= 51 && vitorias <= 80) {
+        XP  = "Ouro";
+    } else if (vitorias >= 81 && vitorias <= 90) {
+        XP  = "Diamante";
+    } else if (vitorias >= 91 && vitorias <= 100) {
+        XP  = "Lendário";
+    } else {
+        XP  = "Imortal";
+    }
+
+    console.log(`O Messi tem um saldo de ${saldoVitorias} vitorias e está no XP ${XP}`);
+}
+
+const vitorias = 234;
+const derrotas = 56;
+calcularXP(vitorias, derrotas);
