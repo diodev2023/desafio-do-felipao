@@ -52,4 +52,38 @@ Ao final deve se exibir uma mensagem:
   guerreiro atacou usando espada
  */
 
- 
+  class Heroi {
+    constructor(nome, idade, genero) {
+      this.nome = nome;
+      this.idade = idade;
+      this.genero =  genero;
+    }
+  
+    atacar() {
+      let ataque;
+      switch (this.genero) {
+        case "mago":
+          ataque = "magia";
+          break;
+        case "guerreiro":
+          ataque = "espada";
+          break;
+        case "monge":
+          ataque = "artes marciais";
+          break;
+        case "ninja":
+          ataque = "shuriken";
+          break;
+        default:
+          ataque = "um ataque desconhecido";
+          break;
+      }
+     
+      console.log(`O ${this.genero} atacou usando ${ataque}`);
+    }
+  }
+  
+  // Exemplo de uso da classe
+  const meuHeroi = new Heroi("Herói Exemplo", 30, "guerreiro");
+  meuHeroi.atacar();
+  
